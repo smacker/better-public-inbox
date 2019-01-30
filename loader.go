@@ -37,6 +37,10 @@ func (l *DirLoader) All() ([]*mail.Message, error) {
 	var result []*mail.Message
 
 	err := filepath.Walk(l.dir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
 		if info.IsDir() {
 			if info.Name() == ".git" {
 				return filepath.SkipDir
