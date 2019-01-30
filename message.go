@@ -21,7 +21,7 @@ type MessageHeader struct {
 	Cc      string
 }
 
-// MessageHeader contains headers of a message and body as a list of blocks
+// Message contains headers of a message and body as a list of blocks
 type Message struct {
 	*MessageHeader
 
